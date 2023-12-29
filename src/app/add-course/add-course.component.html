@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+
+        <div class="row">
+            <div class="col-6">
+                <form #courseForm="ngForm" (ngSubmit)="addCourse(courseForm)">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Titres du Cours</mat-label>
+                        <input matInput placeholder="Titres du Cours" [(ngModel)]="course.coursename" name="coursename">
+
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Prix du Cours</mat-label>
+                        <input matInput placeholder="Prix du Cours" [(ngModel)]="course.courseprice" name="courseprice">
+
+                    </mat-form-field>
+                    <div align="end">
+                        <button mat-stoked-button color="primary">Clear</button>
+                        <button type="submit" color="primary">Add</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-6">
+                <input type="file" multiple value="select" #selectFile 
+                (change)="onFileSelected($event)"
+                >
+            </div>
+        </div>
+
+    </div>
+</div>
